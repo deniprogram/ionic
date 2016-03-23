@@ -15,20 +15,20 @@ angular.module('takeAction', ['ionic'])
       titleText: 'Modify your album',
       cancelText: 'Cancel',
       cancel: function() {
-        $scope.message('Cancel');
+        $scope.action_static('Cancel');
         return true;
       },
       buttonClicked: function(index) {
-        $scope.message(index === 0 ? 'Share' : 'Edit');
+        $scope.action_static(index === 0 ? 'Share' : 'Edit');
         return true;
       },
       destructiveButtonClicked: function() {
-        $scope.message('Delete');
+        $scope.action_static('Delete');
         return true;
       }
     });
   };
-  $scope.message = function(msg) {
+  $scope.action_static = function(msg) {
     $scope.messages.unshift({
       text: 'User pressed ' + msg
     });
